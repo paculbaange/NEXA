@@ -27,7 +27,7 @@ export default function Login() {
       );
 
       Alert.alert("Login successful!");
-      router.push("/goals");
+      router.push("/dashboard");
 
     } catch (err) {
       Alert.alert("Login error", err.message);

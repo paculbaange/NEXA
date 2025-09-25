@@ -8,7 +8,7 @@ export default function Welcome() {
 
   useEffect(() => {
     if (Platform.OS === "web") {
-      document.title = "";  
+      document.title = "NEXA Dictionary";  
     }
   }, []);
 
@@ -30,6 +30,7 @@ export default function Welcome() {
           color: "#fff",
           marginBottom: 20,
           letterSpacing: 2,
+          fontFamily: Platform.OS === "ios" ? "Georgia" : "serif", // elegant serif font for dictionary feel
         }}
       >
         𝗡𝗘𝗫𝗔
@@ -41,10 +42,15 @@ export default function Welcome() {
           color: "#ddd",
           textAlign: "center",
           marginBottom: 50,
-          fontSize: 20,
+          fontSize: 22,
+          fontStyle: "italic",
+          lineHeight: 28,
+          paddingHorizontal: 10,
+          fontFamily: Platform.OS === "ios" ? "Palatino" : "serif",
         }}
       >
-        𝒴𝑜𝓊𝓇 𝒫𝑒𝓇𝓈𝑜𝓃𝒶𝓁 𝒫𝓁𝒶𝓃𝓃𝑒𝓇 & 𝑅𝑒𝓂𝒾𝓃𝒹𝑒𝓇 𝒜𝓅𝓅 – 𝒮𝓉𝒶𝓎 𝒪𝓇𝑔𝒶𝓃𝒾𝓏𝑒𝒹, 𝒩𝑒𝓋𝑒𝓇 𝑀𝒾𝓈𝓈 𝒶 𝒯𝒶𝓈𝓀.
+        Your trusted digital dictionary — {"\n"}
+        Explore definitions, synonyms, and enrich your vocabulary every day.
       </Text>
 
       {/* Login Button */}
@@ -52,15 +58,20 @@ export default function Welcome() {
         onPress={() => router.push("/login")}
         style={{
           backgroundColor: "#9333EA",
-          paddingVertical: 10,
-          borderRadius: 5,
-          width: "40%",
+          paddingVertical: 12,
+          borderRadius: 8,
+          width: "45%",
           alignItems: "center",
           marginBottom: 15,
+          shadowColor: "#000",
+          shadowOpacity: 0.25,
+          shadowRadius: 6,
+          shadowOffset: { width: 0, height: 3 },
+          elevation: 5,
         }}
       >
-        <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 16 }}>
-          𝐋𝐨𝐠 𝐈𝐧
+        <Text style={{ color: "#fff", fontWeight: "700", fontSize: 18 }}>
+          Log In
         </Text>
       </TouchableOpacity>
 
@@ -70,14 +81,19 @@ export default function Welcome() {
         style={{
           borderColor: "#fff",
           borderWidth: 2,
-          paddingVertical: 10,
-          borderRadius: 5,
-          width: "40%",
+          paddingVertical: 12,
+          borderRadius: 8,
+          width: "45%",
           alignItems: "center",
+          shadowColor: "#000",
+          shadowOpacity: 0.15,
+          shadowRadius: 4,
+          shadowOffset: { width: 0, height: 2 },
+          elevation: 3,
         }}
       >
-        <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 16 }}>
-          𝐒𝐢𝐠𝐧 𝐔𝐩
+        <Text style={{ color: "#fff", fontWeight: "700", fontSize: 18 }}>
+          Sign Up
         </Text>
       </TouchableOpacity>
     </LinearGradient>
